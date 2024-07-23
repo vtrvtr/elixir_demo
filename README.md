@@ -1,6 +1,6 @@
 # Modern demo system
 
-This is an updated version (Erlang 26, Elixir 1.17.1, Phoenix 1.7.12 and all required dependencies) of the talk Sasa Juric at GOTO 2019. Link below. 
+This is an updated version (Erlang 26, Elixir 1.17.1, Phoenix 1.7.12 and all required dependencies) of the talk Sasa Juric presented at GOTO 2019. Link below. 
 
 > https://www.youtube.com/watch?v=JvBT4XBdoUE
 
