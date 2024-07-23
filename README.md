@@ -10,7 +10,7 @@ This is an updated version (Erlang 26, Elixir 1.17.1, Phoenix 1.7.12 and all req
 
 * Install Erlang OTP 26
 * Install Elixir 1.17.1
-* From root folder run `mix deps.get`
+* From root folder run `mix deps.get` inside `example_folder`
 
 ### Running
 
