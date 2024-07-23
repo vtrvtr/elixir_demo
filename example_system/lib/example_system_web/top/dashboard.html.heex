@@ -1,0 +1,45 @@
+<div class="topDashboard">
+  <div style="height:100%">
+    <div class="processesGrid">
+      <%= unless is_nil(@top) do %>
+        <div></div>
+        <div class="space-y-4">
+          <div class="space-y-4">
+            <%= Enum.map(@top, fn process -> %>
+              <div class="p-4 bg-white shadow rounded-lg flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                  <div class="text-lg font-semibold text-gray-700">
+                    <%= inspect(process.pid) %>
+                  </div>
+                  <div class="text-gray-500">
+                    <%= process.cpu %> CPU
+                  </div>
+                </div>
+                <div class="space-x-2">
+                  <button
+                    phx-click="process_info"
+                    phx-value-pid={:erlang.pid_to_list(process.pid)}
+                    class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                  >
+                    Info
+                  </button>
+                  <button
+                    phx-click="process_kill"
+                    phx-value-pid={:erlang.pid_to_list(process.pid)}
+                    class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                  >
+                    Kill
+                  </button>
+                </div>
+              </div>
+            <% end) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <pre class="output bg-gray-800 text-white p-4 rounded-lg shadow overflow-x-auto">
+  <%= @output %>
+  </pre>
+</div>
